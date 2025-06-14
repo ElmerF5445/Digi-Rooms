@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title id="Window_Title">Window.Title.Primary | Window.Title.Secondary</title>
+    <link rel="icon" type="image/png" href="Assets/Icons/favicon.png" sizes="96x96" id="Window_Icon">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Scripts/Styles/App_Stylesheet_Base.css">
+    <!-- Scripts -->
+     <script src="Scripts/Javascript/ERUMAUI_Javascript_Core.js"></script>
+     <!-- <script src="Scripts/Javascript/ERUMAUI_Javascript_Initialization.js"></script> -->
+     <script src="Scripts/Javascript/ERUMAUI_Javascript_UI.js" defer></script>
+     <script src="Scripts/Javascript/Test.js" defer></script>
+</head>
+<body Theme="Light">
+    <div class="Landing">
+        <div class="Landing_Content">
+            <div class="Landing_Logo_DR">
+                <img class="Landing_Logo_DR_Image" src="Assets/Images/DR_Logo.png" draggable="false" loading="lazy" onload="this.style.opacity = '100%'"/>
+            </div>
+            <div class="Landing_Form" id="Landing_Form" Form="Login">
+                <div class="Landing_Form_Content">
+                    <h1 class="Landing_Form_Title" Margin_Vertical>
+                        Log in
+                    </h1>
+                    <form class="Input_Form" Composition = "Linear">
+                        <label class="Input_Label">
+                            Email address
+                        </label>
+                        <input class="Input_Text" type="text"/>
+                        <label class="Input_Label">
+                            Password
+                        </label>
+                        <input class="Input_Text" type="password"/>
+                        <button type="submit" class="General_Button" Override_Form_Composition>
+                            Log in
+                        </button>
+                    </form>
+                    <div class="Landing_Form_AltPagePrompt">
+                        <h4 class="Landing_Form_AltPagePrompt_Title">
+                            Don't have an account?
+                        </h4>
+                        <button class="General_Button" onclick="Element_Attribute_Set('Landing_Form', 'Form', 'Register');">
+                            Register
+                        </button>
+                    </div>
+                </div>
+                <div class="Landing_Form_Content">
+                    <h1 class="Landing_Form_Title" Margin_Vertical>
+                        Register
+                    </h1>
+                    <form class="Input_Form" Composition = "Linear">
+                        <label class="Input_Label">
+                            Email address
+                        </label>
+                        <input class="Input_Text" type="text"/>
+                        <label class="Input_Label">
+                            Full name
+                        </label>
+                        <input class="Input_Text" type="text"/>
+                        <label class="Input_Label">
+                            Department
+                        </label>
+                        <input class="Input_Text" type="text"/>
+                        <label class="Input_Label">
+                            Password
+                        </label>
+                        <input class="Input_Text" type="password"/>
+                        <label class="Input_Label">
+                            Repeat password
+                        </label>
+                        <input class="Input_Text" type="password"/>
+                        <button type="submit" class="General_Button" Override_Form_Composition>
+                            Send account registration request
+                        </button>
+                    </form>
+                    <div class="Landing_Form_AltPagePrompt">
+                        <h4 class="Landing_Form_AltPagePrompt_Title">
+                            Already have an account?
+                        </h4>
+                        <button class="General_Button" onclick="Element_Attribute_Set('Landing_Form', 'Form', 'Login');">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="Landing_Logo_RED">
+                <img class="Landing_Logo_RED_Image" src="Assets/Images/RED_Logo.png" draggable="false" loading="lazy" onload="this.style.opacity = '100%'"/>
+            </div>
+            <div class="Landing_Version">
+                <p class="Landing_Version_Text">
+                    Prototype A [Version 1.0]. Please test the system thoroughly!
+                </p>
+            </div>
+        </div>
+        <div class="Landing_Banner">
+            <img class="Landing_Banner_Image" src="Assets/Images/NSDAPS_Main_Facade.png" draggable="false" loading="lazy" onload="this.style.opacity = '100%'"/>
+        </div>
+    </div>
+</body>
+</html>

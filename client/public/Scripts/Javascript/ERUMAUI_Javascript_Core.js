@@ -2,7 +2,7 @@
     Core functions
 */
 
-function Element_isntNull(ID){
+window.Element_isntNull = function(ID){
 	if (Element_Get_ByID(ID) == null){
 		return false;
 	} else {
@@ -10,7 +10,7 @@ function Element_isntNull(ID){
 	}
 }
 
-function Element_isNull(ID){
+window.Element_isNull = function(ID){
 	if (Element_Get_ByID(ID) == null){
 		return true;
 	} else {
@@ -18,86 +18,86 @@ function Element_isNull(ID){
 	}
 }
 
-function Element_Get_ByID(ID){
+window.Element_Get_ByID = function(ID){
 	return document.getElementById(ID);
 }
 
-function Element_Get_ByQuery(Query){
+window.Element_Get_ByQuery = function(Query){
 	return document.querySelector(Query);
 }
 
-function Element_Get_ByQuery_All(Query){
+window.Element_Get_ByQuery_All = function(Query){
 	return document.querySelectorAll(Query);
 }
 
-function Element_Get_ByTag(ID, Tag){
+window.Element_Get_ByTag = function(ID, Tag){
 	return document.getElementById(ID).getElementsByTagName(Tag);
 }
 
-function Element_Clear(ID){
+window.Element_Clear = function(ID){
 	document.getElementById(ID).innerHTML = "";
 }
 
-function Element_Clear_ExceptFirst(ID){
+window.Element_Clear_ExceptFirst = function(ID){
 	for (a = 1; a <= document.getElementById(ID).childNodes.length; a++){
 		document.getElementById(ID).removeChild(document.getElementById(ID).lastChild)
 	}
 	// document.getElementById(ID).innerHTML = "";
 }
 
-function Element_Create(Type){
+window.Element_Create = function(Type){
 	return document.createElement(Type);
 }
 
-function Element_Append(ID, ChildToAppend){
+window.Element_Append = function(ID, ChildToAppend){
 	document.getElementById(ID).appendChild(ChildToAppend);
 }
 
-function Element_Append_Direct(ID, InnerHTML){
+window.Element_Append_Direct = function(ID, InnerHTML){
 	document.getElementById(ID).innerHTML += InnerHTML;
 }
 
-function Element_InnerHTML_Set(ID, Value){
+window.Element_InnerHTML_Set = function(ID, Value){
 	document.getElementById(ID).innerHTML = Value;
 }
 
-function Element_InnerText_Set(ID, Value){
+window.Element_InnerText_Set = function(ID, Value){
 	document.getElementById(ID).innerText = Value;
 }
 
-function Element_Value_Get(ID){
+window.Element_Value_Get = function(ID){
 	return Element_Get_ByID(ID).value;
 }
 
-function Element_Value_Set(ID, Value){
+window.Element_Value_Set = function(ID, Value){
 	Element_Get_ByID(ID).value = Value;
 }
 
-function Element_Attribute_Set(ID, Attribute, Value){
+window.Element_Attribute_Set = function(ID, Attribute, Value){
     Element_Get_ByID(ID).setAttribute(Attribute, Value);
 }
 
-function Element_Attribute_Remove(ID, Attribute){
+window.Element_Attribute_Remove = function(ID, Attribute){
     Element_Get_ByID(ID).removeAttribute(Attribute);
 }
 
-function Element_Attribute_Get(ID, Attribute){
+window.Element_Attribute_Get = function(ID, Attribute){
 	return Element_Get_ByID(ID).getAttribute(Attribute);
 }
 
-function Element_Opacity_Set(ID, Opacity){
+window.Element_Opacity_Set = function(ID, Opacity){
     if (Opacity >= 0 && Opacity <= 100){
 		Element_Get_ByID(ID).style.opacity = Opacity + "%";
     }
 }
 
-function Element_Style_Animate(ElementID, Animation_Name, Animation_Duration, Animation_FillMode){
+window.Element_Style_Animate = function(ElementID, Animation_Name, Animation_Duration, Animation_FillMode){
 	document.getElementById(ElementID).style.animationName = Animation_Name;
 	document.getElementById(ElementID).style.animationDuration = Animation_Duration;
 	document.getElementById(ElementID).style.animationFillMode = Animation_FillMode;
 }
 
-function Element_Style_Animate_OnFinish_Display(ElementID, Animation_Name, Animation_Duration, Animation_FillMode, OnFinish_Display){
+window.Element_Style_Animate_OnFinish_Display = function(ElementID, Animation_Name, Animation_Duration, Animation_FillMode, OnFinish_Display){
 	document.getElementById(ElementID).style.animationName = Animation_Name;
 	document.getElementById(ElementID).style.animationDuration = Animation_Duration;
 	document.getElementById(ElementID).style.animationFillMode = Animation_FillMode;
@@ -106,7 +106,7 @@ function Element_Style_Animate_OnFinish_Display(ElementID, Animation_Name, Anima
 	})
 }
 
-function Element_Style_Animate_Batch_QuerySelector(QuerySelector, Animation_Name, Animation_Duration, Animation_FillMode, Animation_Iteration, Animation_Delay){
+window.Element_Style_Animate_Batch_QuerySelector = function(QuerySelector, Animation_Name, Animation_Duration, Animation_FillMode, Animation_Iteration, Animation_Delay){
 	var Element_Delay = 0;
 	var Element_QuerySelector = document.querySelectorAll(QuerySelector);
 	for (a = 0; a < Element_QuerySelector.length; a++){
@@ -124,11 +124,11 @@ function Element_Style_Animate_Batch_QuerySelector(QuerySelector, Animation_Name
 	}
 }
 
-function Element_Style_Display(ElementID, ElementDisplay){
+window.Element_Style_Display = function(ElementID, ElementDisplay){
 	document.getElementById(ElementID).style.display = ElementDisplay;
 }
 
-async function Page_ChangePage(URL, Transition_Function, OpenInTab){
+window.Page_ChangePage = async function(URL, Transition_Function, OpenInTab){
 	if (Transition_Function){
 		await Transition_Function();
 	}
@@ -147,7 +147,7 @@ async function Page_ChangePage(URL, Transition_Function, OpenInTab){
 	}
 }
 
-function UF_Parameter_Get(Parameter){
+window.UF_Parameter_Get = function(Parameter){
     UF_Requested_Parameter = Parameter;
     UF_Parameter_Value = new URLSearchParams(window.location.search).get(Parameter);
     if (UF_Parameter_Value != null || UF_Parameter_Value != undefined){
@@ -155,14 +155,14 @@ function UF_Parameter_Get(Parameter){
     }
 }
 
-function UF_Parameter_Set(Parameter, Value){
+window.UF_Parameter_Set = function(Parameter, Value){
     UF_URL_Parameter = new URLSearchParams(window.location.search);
     UF_URL_Parameter.set(Parameter, Value);
     UF_URL = window.location.pathname + '?' + UF_URL_Parameter.toString();
     window.history.pushState({}, '', UF_URL);
 }
 
-function UF_Parameter_Remove(Parameter){
+window.UF_Parameter_Remove = function(Parameter){
 	UF_URL_Parameter = new URLSearchParams(window.location.search);
     UF_URL_Parameter.delete(Parameter);
 	if (UF_URL_Parameter.size > 0){
@@ -175,7 +175,7 @@ function UF_Parameter_Remove(Parameter){
 }
 
 // Gets the current date
-function Date_Get(){
+window.Date_Get = function(){
     const CurrentDate = new Date();
     var Date_Month_Index = CurrentDate.getMonth();
     var Date_Month_Array = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -186,7 +186,7 @@ function Date_Get(){
 }
 
 // Creates a unique key
-function Key_Generate(){
+window.Key_Generate = function(){
     const Time = new Date();
     var Time_Month = Time.getMonth();
     var Time_Day = Time.getDate();
@@ -197,7 +197,7 @@ function Key_Generate(){
     return `${Time_Year}${Time_Month}${Time_Day}_${Time_Hours}${Time_Minutes}${Time_Seconds}`;
 }
 
-function StorageItem_Set(Key, Data, Type){
+window.StorageItem_Set = function(Key, Data, Type){
 	if (Type == "Local" || Type == null){
 		localStorage.setItem(Key, JSON.stringify(Data));
 	} else if (Type == "Session") {
@@ -205,7 +205,7 @@ function StorageItem_Set(Key, Data, Type){
 	}
 }
 
-function StorageItem_Get(Key, Type){
+window.StorageItem_Get = function(Key, Type){
 	if (Type == "Local" || Type == null){
 		return JSON.parse(localStorage.getItem(Key));
 	} else if (Type == "Session") {
@@ -213,7 +213,7 @@ function StorageItem_Get(Key, Type){
 	}
 }
 
-function Data_Import_FromPath(Path, Type){
+window.Data_Import_FromPath = function(Path, Type){
 	const request = new XMLHttpRequest();
     request.open("GET", Path, false);
     request.send();
@@ -226,7 +226,7 @@ function Data_Import_FromPath(Path, Type){
 	}
 }
 
-function Data_Import(FileInputElementID, Type){
+window.Data_Import = function(FileInputElementID, Type){
 	var File_Element = document.getElementById(FileInputElementID);
     var File_Element_File = File_Element.files[0];
     const Reader = new FileReader();
@@ -243,7 +243,7 @@ function Data_Import(FileInputElementID, Type){
     Reader.readAsText(File_Element_File);
 }
 
-function Data_Export(File_Data, File_Name, File_Extension, Type){
+window.Data_Export = function(File_Data, File_Name, File_Extension, Type){
 	var Data_Initial = File_Data;
 	var Data_Final;
 	if (Type == "JSON" || Type == null){

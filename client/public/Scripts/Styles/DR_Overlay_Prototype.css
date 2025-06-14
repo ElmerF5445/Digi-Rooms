@@ -1,0 +1,18 @@
+.Overlay_Prototype{
+    position: fixed;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    /* background-color: red; */
+    z-index: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 25px;
+    pointer-events: none;
+}
+
+.Overlay_Prototype_Text{
+    font-family: var(--Text-Font-Secondary);
+    opacity: 50%;
+    pointer-events: all;
+}

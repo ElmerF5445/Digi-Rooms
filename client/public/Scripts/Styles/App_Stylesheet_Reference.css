@@ -13,10 +13,10 @@
 
 :root{
     /* Default values for elements changed by settings at onload */
-    --BG-Img-Wallpaper-Main: url(../../Assets/Backgrounds/Wallpaper_Main.png);
+    /* --BG-Img-Wallpaper-Main: url(../../Assets/Backgrounds/Wallpaper_Main.png);
 	--BG-Img-Wallpaper-Clock: url(../../Assets/Backgrounds/Clock_Screen.png);
     --BG-Img-Wallpaper-Loading: url(../../Assets/Backgrounds/Splash.png);
-	--BG-Img-Splash: url(../../Assets/Backgrounds/Splash.png);
+	--BG-Img-Splash: url(../../Assets/Backgrounds/Splash.png); */
 	--BG-Img-Wallpaper-Main-Blur: 20px;
 	--BG-Img-Wallpaper-Main-Darken: 40%;
 	--BG-Img-Wallpaper-Main-Opacity: 60%;

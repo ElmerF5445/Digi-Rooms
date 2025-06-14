@@ -1,0 +1,145 @@
+.Landing{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.Landing_Content{
+    width: 500px;
+    display: grid;
+    grid-template-rows: 0.2fr 1fr auto auto;
+    padding: 40px;
+}
+
+.Landing_Logo_DR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    /* outline: solid red; */
+}
+
+.Landing_Logo_DR_Image{
+    width: 350px;
+}
+
+.Landing_Form{
+    /* outline: solid red; */
+    /* height: 100%; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* padding-bottom: 150px;    */
+    position: relative;
+}
+
+/* .Landing_Form[Form = "Register"]{
+    padding-bottom: 0px;
+} */
+
+.Landing_Form_Content{
+    position: absolute;
+    width: 500px;
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+}
+
+.Landing_Form[Form = "Register"] > .Landing_Form_Content:nth-child(1){
+    transform: translateX(calc(-100% - 80px));
+    /* display: none; */
+}
+
+.Landing_Form[Form = "Login"] > .Landing_Form_Content:nth-child(1){
+    transform: translateX(0%);
+}
+
+.Landing_Form[Form = "Login"] > .Landing_Form_Content:nth-child(2){
+    transform: translateX(calc(100% + 80px));
+    /* display: none; */
+}
+
+.Landing_Form[Form = "Register"] > .Landing_Form_Content:nth-child(2){
+    transform: translateX(0%);
+}
+
+.Landing_Form_Title{
+    font-family: var(--Text-Font-Primary);
+    margin-bottom: 30px;
+}
+
+.Landing_Logo_RED{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.Landing_Logo_RED_Image{
+    width: 150px;
+}
+
+.Landing_Version_Text{
+    font-family: var(--Text-Font-Secondary);
+    opacity: 25%;
+}
+
+.Landing_Banner{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Landing_Banner_Image{
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    object-fit: cover;
+    /* top: 0; */
+}
+
+.Landing_Form_AltPagePrompt{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.Landing_Form_AltPagePrompt_Title{
+    font-family: var(--Text-Font-Primary);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label{
+    text-align: left;
+}
+
+@media only screen and (max-width: 1000px){
+    .Landing{
+        grid-template-columns: auto 0fr;
+    }
+    .Landing_Content{
+        width: calc(100% - 80px);
+        grid-template-rows: 60px 1fr auto auto;
+    }
+    .Landing_Logo_DR_Image{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .Landing_Form{
+        padding-bottom: 0px;
+        justify-content: center;
+    }
+    .Landing_Form_Content{
+        width: 100%;
+    }
+    .Landing_Logo_RED_Image{
+        width: 100px;
+    }
+}
