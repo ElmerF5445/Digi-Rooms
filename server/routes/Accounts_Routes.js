@@ -91,4 +91,23 @@ router.post('/Login', async (req, res) => {
   }
 });
 
+// Get account data
+router.get('/Profile', async (req, res) => {
+  try{
+    const Token = req.headers.authorization?.split(' ')[1];
+    if (!Token){
+      return res.status(401).json({message: "No token detected."});
+    }
+
+    const Token_Decoded = jwt.verify(Token, "DR_Secret");
+    const Account_Details = await Accounts.findById(Token_Decoded.id).select("-Password");
+    if (!Account_Details){
+      return res.status(404).json({message: "Account not found."});
+    }
+    res.json(Account_Details);
+  } catch (Error) {
+    res.status(401).json({message: "Invalid or expired token."});
+  }
+});
+
 module.exports = router;

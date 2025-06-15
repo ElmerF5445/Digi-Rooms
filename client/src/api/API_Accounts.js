@@ -6,3 +6,4 @@ const API = axios.create({
 
 export const Accounts_Register = (data) => API.post('/Register', data);
 export const Accounts_Login = (data) => API.post('/Login', data);
+export const Accounts_Profile = (data) => API.post('/Profile', data);

@@ -25,6 +25,8 @@
 	--Element-BackdropBlur: blur(10px);
 	/* --Debug-ElementOutline: none; */
 	--Debug-ElementOutline: var(--Accent-Color);
+	--Panel-Header-Height: 50px;
+	--Panel-Ribbon-Height: 30px;
 	--Panel-Navigation-Rail-Width: 50px;
 	--Panel-Navigation-Rail-Width-Expanded: 150px;
 	--Panel-Navigation-Bottom-Height: 70px;
@@ -36,6 +38,9 @@
 	--Panel-Center-Padding-Bottom: 25px;
 	--Panel-Center-Padding-Left: 15%;
 	--Panel-Center-Padding-Right: 15%;
+	--Panels-Panel-Gap: 10px;
+	--Panels-Padding: 10px;
+	--Panels-Radius: 15px;
 	--Element-Transition-Delay: 0.4s;
 	--Element-Animation-Duration: 0.5s;
 	--Element-BoxShadow: 0cm 0cm 0.1cm 0.1cm rgba( 0, 0, 0, 0.1); 
@@ -49,6 +54,9 @@
 	--Accent-Color-Active: #3b20d4;
     --Element-Border-Width: 2px;
     --Element-Outline-Width: var(--Element-Border-Width);
+
+	--BG-Color-Panels-Container: #dddcdc;
+	--BG-Color-Panels: #f7f7f7;
 }
 
 body[Theme = "Dark"]{

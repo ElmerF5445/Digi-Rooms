@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Accounts_Login } from '../api/API_Accounts';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Contexts/AuthContext';
 
 export default function Forms_Landing_Login() {
     const [Form_Data, Form_Data_Set] = useState(
@@ -12,7 +13,12 @@ export default function Forms_Landing_Login() {
 
     const [Message, Message_Set] = useState("");
 
+    const {Login} = useAuth();
+
     const navigate = useNavigate();
+
+    
+    
 
     const handleChange = (e) => {
         Form_Data_Set({...Form_Data, [e.target.name]: e.target.value});
@@ -24,7 +30,7 @@ export default function Forms_Landing_Login() {
             const res = await Accounts_Login(Form_Data);
             Message_Set("Login successful");
             console.log("Login successful.");
-            localStorage.setItem("Token", res.data.Token);
+            Login(res.data.Token);
             navigate("/main");
         } catch (Error) {
             Message_Set(Error.response?.data?.message || "Login failed.");

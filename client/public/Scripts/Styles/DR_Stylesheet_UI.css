@@ -1,0 +1,75 @@
+ui-main{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+ui-header{
+    background-color: var(--BG-Color-Overlay-Header);
+    width: 100%;
+    position: fixed;
+    height: var(--Panel-Header-Height);
+    top: 0;
+    left: 0;
+    grid-area: Header;
+}
+
+ui-ribbon{
+    position: fixed;
+    width: calc(100% - var(--Panel-Navigation-Rail-Width));
+    height: var(--Panel-Ribbon-Height);
+    margin-top: var(--Panel-Header-Height);
+    margin-left: var(--Panel-Navigation-Rail-Width);
+    background-color: var(--BG-Color-Overlay-Ribbon);
+}
+
+ui-navigationrail{
+    background-color: var(--BG-Color-Overlay-Sidebar);
+    width: var(--Panel-Navigation-Rail-Width);
+    height: calc(100% - var(--Panel-Header-Height));
+    margin-top: var(--Panel-Header-Height);
+    /* left: 0; */
+    position: fixed;
+}
+
+ui-panels{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--Panels-Panel-Gap);
+    margin-left: var(--Panel-Navigation-Rail-Width);
+    margin-top: calc(var(--Panel-Header-Height) + var(--Panel-Ribbon-Height));
+    width: calc(100% - var(--Panel-Navigation-Rail-Width) - var(--Panels-Padding) - var(--Panels-Padding));
+    height: calc(100% - var(--Panel-Header-Height) - var(--Panel-Ribbon-Height) - var(--Panels-Padding) - var(--Panels-Padding));
+    padding: var(--Panels-Padding);
+    background-color: var(--BG-Color-Panels-Container);
+}
+
+ui-panel{
+    border-radius: var(--Panels-Radius);
+    background-color: var(--BG-Color-Panels);
+}
+
+ui-panel[Left]{
+    width: var(--Panel-Left-Width-Collapsed);
+}
+
+ui-panel[Left][State="Expanded"]{
+    width: var(--Panel-Left-Width-Expanded);
+}
+
+ui-panel[Center]{
+    padding-left: var(--Panel-Center-Padding-Left);
+    padding-right: var(--Panel-Center-Padding-Right);
+    padding-top: var(--Panel-Center-Padding-Top);
+    padding-bottom: var(--Panel-Center-Padding-Bottom);
+}
+
+ui-panel[Right]{
+    width: var(--Panel-Right-Width-Collapsed);
+}
+
+ui-panel[Right][State="Expanded"]{
+    width: var(--Panel-Right-Width-Expanded);
+}
